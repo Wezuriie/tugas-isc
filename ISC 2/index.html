@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎵 WeSic 🎵</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">🎵 Playlist</div>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#playlist">Playlist</a></li>
+          <li><a href="#galeri">Gallery</a></li>
+          <li><a href="#kontak">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">
+        ☰
+      </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1>Me & You</h1>
+        <p>
+          A little space to celebrate the melodies that always remind me of your
+          smile
+        </p>
+
+        <!-- Berikan atribut data-src untuk menentukan lagu utama (misal: lagu1.mp3) -->
+        <button class="btn" id="playBtn" data-src="lagu1.mp3">
+          ▶ Putar Lagu Utama
+        </button>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT SECTION -->
+    <main class="container">
+      <!-- Playlist Favorit (Flexbox) -->
+      <section id="playlist" class="content-section">
+        <h2>3 Songs for my Girlfriend</h2>
+        <p style="text-align: center; margin-bottom: 20px; color: #666">
+          💡 Click any card to play the song
+        </p>
+
+        <div class="flex-container">
+          <article class="card play-card" data-src="lagu1.mp3">
+            <h3>you!</h3>
+            <p>LANY</p>
+            <small>🎵 Click to Play.</small>
+          </article>
+
+          <article class="card play-card" data-src="lagu2.mp3">
+            <h3>I'd like to watch you sleeping</h3>
+            <p>Sal Priadi</p>
+            <small>🎵 Click to Play.</small>
+          </article>
+
+          <article class="card play-card" data-src="lagu3.mp3">
+            <h3>Megamix</h3>
+            <p>Taylor Swift</p>
+            <small>🎵 Click to Play.</small>
+          </article>
+        </div>
+
+        <!-- HANYA ADA 1 AUDIO PLAYER PUSAT DI SINI -->
+        <audio id="audioPusat"></audio>
+      </section>
+
+            <!-- Galeri Konser/Memori (CSS Grid - 3 Foto) -->
+      <section id="galeri" class="content-section">
+        <h2>Memory Of Us</h2>
+        <div class="grid-container">
+          
+          <div class="grid-item">
+            <img src="foto1.png" alt="First Concert">
+            <span class="caption">🎸 </span>
+          </div>
+          
+          <div class="grid-item">
+            <img src="foto2.png" alt="Our Tickets">
+            <span class="caption">🎫 </span>
+          </div>
+          
+          <div class="grid-item">
+            <img src="foto3.jpg" alt="Favorite Band">
+            <span class="caption">🎤 </span>
+          </div>
+
+        </div>
+      </section>
+
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <p>&copy; 2026 WeSic. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

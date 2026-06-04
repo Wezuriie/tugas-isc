@@ -1,0 +1,220 @@
+/* RESET & GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fcf6f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* NAVBAR (Flexbox) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: #2b1055;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff5e7e;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero-section {
+  height: 70vh;
+  background:
+    linear-gradient(rgba(43, 16, 85, 0.7), rgba(43, 16, 85, 0.7)),
+    url("https://unsplash.com") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #ff5e7e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* MAIN CONTAINER */
+.container {
+  padding: 40px 10%;
+}
+
+.content-section {
+  margin-bottom: 50px;
+}
+
+.content-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2b1055;
+}
+
+/* PLAYLIST SECTION (Flexbox) */
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  flex: 1 1 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #ff5e7e;
+}
+
+/* GALERI SECTION (CSS Grid - 3 Kolom) */
+.grid-container {
+  display: grid;
+  /* Membuat maksimal 3 kolom sejajar, otomatis turun jadi 1 kolom di HP */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grid-item {
+  position: relative; /* Menahan teks caption agar menempel di atas foto */
+  height: 250px; /* Mengatur tinggi kotak foto agar proporsional */
+  border-radius: 12px;
+  overflow: hidden; /* Memotong bagian foto yang meluber keluar kotak */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memaksa foto memenuhi kotak tanpa merusak aspek rasio (tidak gepeng) */
+  transition: transform 0.4s ease; /* Kecepatan efek zoom foto */
+}
+
+/* Efek Zoom Estetik saat Foto Disentuh Kursor (Hover) */
+.grid-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Mengatur Teks Keterangan di Atas Foto */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Memberikan efek gradasi gelap transparan agar teks putih mudah dibaca */
+  background: linear-gradient(transparent, rgba(43, 16, 85, 0.85));
+  color: #fff;
+  padding: 20px 10px 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #2b1055;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE DESIGN (Media Query) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    background-color: #2b1055;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+}
+.play-card {
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.play-card:hover {
+  transform: translateY(-5px);
+  background-color: #fff0f2; /* Berubah warna merah muda tipis saat di-hover */
+}
+
+/* Style tambahan saat lagu di kartu tersebut sedang aktif diputar */
+.play-card.sedang-diputar {
+  border-left: 5px solid #2b1055;
+  background-color: #f0e6ff;
+}
